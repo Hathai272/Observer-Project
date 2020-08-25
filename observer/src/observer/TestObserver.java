@@ -5,17 +5,19 @@
  */
 package observer;
 
+import java.util.Observer;
+
 /**
  *
  * @author user
  */
 public class TestObserver {
     public static void main(String[] args) {
-	Senior obj1 = new Senior();
-	Marketing obj2 = new Marketing();
+	Observer obj1 = new Senior();
+	Observer obj2 = new Marketing();
 	HeadQuater obj = new HeadQuater();              
-	obj.register(obj1);              
-	obj.register(obj2);              
+	obj.addObserver(obj1);
+        obj.addObserver(obj2); 
 	obj.setSomeData(6);
         obj.setSomeData(7);
     }
